@@ -81,6 +81,15 @@ ifneq (,$(filter bm%280,$(USEMODULE)))
   USEMODULE += bmx280
 endif
 
+ifneq (,$(filter cc1200,$(USEMODULE)))
+  USEMODULE += ieee802154
+  USEMODULE += netdev_ieee802154
+  USEMODULE += luid
+  USEMODULE += xtimer
+  FEATURES_REQUIRED += periph_spi
+  FEATURES_REQUIRED += periph_gpio
+endif
+
 ifneq (,$(filter cc110x,$(USEMODULE)))
   USEMODULE += ieee802154
   USEMODULE += luid
